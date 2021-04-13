@@ -32,7 +32,7 @@ def main(args):
             if not question in identities_vocabulary:
                 identities_vocabulary[question] = len(identities_vocabulary)
 
-            writer.writerow([identities_vocabulary[question], question, sentence, label_number == 4])
+            writer.writerow([identities_vocabulary[question], question, sentence, int(label_number == 4)])
 
 
 if __name__ == "__main__":
