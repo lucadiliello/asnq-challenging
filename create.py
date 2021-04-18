@@ -26,7 +26,7 @@ def main(args):
             sentence = example['sentence']
             label_number = example['sentence_in_long_answer'] * 2 + example['short_answer_in_sentence'] + 1
  
-            if label_number == 1:
+            if args.reduced and label_number == 1:
                 continue
 
             if not question in identities_vocabulary:
@@ -42,6 +42,7 @@ if __name__ == "__main__":
     parser.add_argument('--split', choices=['train', 'validation'], default='train', type=str, required=False)
     parser.add_argument('--output_file', type=str, required=True)
     parser.add_argument('--filter', type=str, required=False, default=None)
+    parser.add_argument('--reduced', action="store_true")
 
     args = parser.parse_args()
     main(args)
