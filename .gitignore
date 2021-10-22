@@ -1,5 +1,6 @@
 # Editor stuff
 .vscode/
+.DS_Store
 
 # I/O Folders
 input/
